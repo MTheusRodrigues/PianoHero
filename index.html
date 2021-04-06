@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-control" content="public">
+
+  <title>Piano Hero</title>
+  <link rel="icon" href="img/piano.ico" />
+  <link rel="stylesheet" href="style/main.css">
+  <link 
+   rel="stylesheet" 
+   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" 
+   integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" 
+   crossorigin="anonymous" />
+  
+
+</head>
+
+<body>
+
+  <div id="piano">
+
+
+    <div id="piano-header">
+        <div class="list-instruments">    
+            <div>
+              <img src="./img/Instruments/piano.png" alt="piano" id="imgPiano"class="instruments">
+              <img src="./img/Instruments/violao-classico.png" alt="violao-classico" id="imgGuitar" class="instruments">
+              <img src="./img/Instruments/sintetizador.png" alt="sintetizador" id="imgSynth" class="instruments">
+            </div>
+            <div>
+              <img src="./img/Instruments/violino.png" alt="violino" id="imgViolin" class="instruments">
+              <img src="./img/Instruments/flauta-transversal.png" alt="flauta-transversal" id="imgFlute" class="instruments">
+              <img src="./img/Instruments/bass-guitar.png" alt="bass-guitar" id="imgBass" class="instruments">
+            </div>
+            <div class="span-ins" id="span-instruments"><span class="span-text" id="span">INSTRUMENTS</span></div>
+            
+
+        </div> 
+      <div class="piano-display" >
+          <div class="piano-display-container-lft"id='piano-display-lft'>
+            <span class="top-span">INSTRUMENTS</span> 
+          </div>
+          <div class="piano-display-container-lft"id='piano-display-center'>
+            <span class="top-span">NOTES</span>
+          </div>
+          <div class="piano-display-container-lft"id='piano-display-right'>
+            <span class="top-span">MODE</span>
+          </div>
+      </div>
+      <div class="piano-controls">
+          <div class="controls-octave" id="0" value="">
+            <div id="up"><i class="fas fa-plus"></i></div>
+            <div id="down"><i class="fas fa-minus"></i></div>
+          </div>
+          <div class="span"  ><span class="span-text" id="span-octave">OCTAVE</span></div>
+          
+          <div id="controls-container-mode">
+            <div id="mode-note">
+              <img src="./img/Instruments/musica.png" alt="sintetizador" class="controls-mode">
+
+            </div>
+            <div id="mode-cords">
+              <img src="./img/Instruments/notas-musicais.png" alt="sintetizador" class="controls-mode">
+
+            </div>
+          </div>
+
+
+          <div class="span"  ><span class="span-text" id="span-mode">MODE</span></div>
+          
+      </div>
+
+    </div>
+
+    <div id="piano-container" class="keys">
+      <div class="li">
+        <div class="white key" data-key="226" data-note="C4" data-keyboard="\"> <span>\</span>
+        </div>
+        <div class="black key sharp" data-key="81" data-note="C#4" data-keyboard="Q"> <span>Q</span>
+        </div>
+      </div>
+      <div class="li">
+        <div class="white key" data-key="65" data-note="D4" data-keyboard="A"> <span>A</span>
+        </div>
+        <div class="black key sharp" data-key="87" data-note="D#4" data-keyboard="W"> <span>W</span>
+        </div>
+      </div>
+      <div class="li">
+        <div class="white key" data-key="83" data-note="E4" data-keyboard="S"> <span>S</span>
+        </div>
+      </div>
+      <div class="li">
+        <div class="white key" data-key="68" data-note="F4" data-keyboard="D"> <span>D</span>
+        </div>
+        <div class="black key sharp" data-key="82" data-note="F#4" data-keyboard="R"><span>R</span>
+        </div>
+      </div>
+      <div class="li">
+        <div class="white key" data-key="70" data-note="G4" data-keyboard="F"> <span>F</span>
+        </div>
+        <div class="black key sharp" data-key="84" data-note="G#4" data-keyboard="T"> <span>T</span>
+        </div>
+      </div>
+      <div class="li">
+        <div class="white key" data-key="71" data-note="A4" data-keyboard="G"> <span>G</span>
+        </div>
+        <div class="black key sharp" data-key="89" data-note="A#4" data-keyboard="Y"><span>Y</span>
+        </div>
+      </div>
+      <div class="li">
+        <div class="white key" data-key="72" data-note="B4" data-keyboard="H"> <span>H</span>
+        </div>
+      </div>
+      <div class="li">
+        <div class="white key" data-key="74" data-note="C5" data-keyboard="J"> <span>J</span>
+        </div>
+        <div class="black key sharp" data-key="73" data-note="C#5" data-keyboard="I"> <span>I</span>
+        </div>
+      </div>
+      <div class="li">
+        <div class="white key" data-key="75" data-note="D5" data-keyboard="K"> <span>K</span>
+        </div>
+        <div class="black key sharp" data-key="79" data-note="D#5" data-keyboard="O"> <span>O</span>
+        </div>
+      </div>
+      <div class="li">
+        <div class="white key" data-key="76" data-note="E5" data-keyboard="L"> <span>L</span>
+        </div>
+      </div>
+      <div class="li">
+        <div class="white key" data-key="186" data-note="F5" data-keyboard="Ç"> <span>Ç</span>
+        </div>
+        <div class="black key sharp" data-key="80" data-note="F#5" data-keyboard="P"> <span>P</span>
+        </div>
+      </div>
+      <div class="li">
+        <div class="white key" data-key="222" data-note="G5" data-keyboard="~"> <span>~</span>
+        </div>
+        <div class="black key sharp" data-key="219" data-note="G#5" data-keyboard="´"> <span>´</span>
+        </div>
+      </div>
+      <div class="li">
+        <div class="white key" data-key="220" data-note="A5" data-keyboard="]"> <span>]</span>
+        </div>
+        <div class="black key sharp" data-key="221" data-note="A#5" data-keyboard="["> <span>[</span>
+        </div>
+      </div>
+      <div class="li">
+        <div class="white key" data-key="193" data-note="B5" data-keyboard="/"> <span>/</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="piano-octave-up">
+    <audio data-key="226"src="/sounds/piano-octave-up/C6.wav"></audio> <audio data-key="74" src="/sounds/piano-octave-up/C7.wav"></audio>
+    <audio data-key="81" src="/sounds/piano-octave-up/Cb6.wav"></audio> <audio data-key="73" src="/sounds/piano-octave-up/Cb7.wav"></audio>
+    <audio data-key="65" src="/sounds/piano-octave-up/D6.wav"></audio> <audio data-key="75" src="/sounds/piano-octave-up/D7.wav"></audio>
+    <audio data-key="87" src="/sounds/piano-octave-up/Db6.wav"></audio> <audio data-key="79" src="/sounds/piano-octave-up/Db7.wav"></audio>
+    <audio data-key="83" src="/sounds/piano-octave-up/E6.wav"></audio> <audio data-key="76" src="/sounds/piano-octave-up/E7.wav"></audio>
+    <audio data-key="68" src="/sounds/piano-octave-up/F6.wav"></audio> <audio data-key="186" src="/sounds/piano-octave-up/F7.wav"></audio>
+    <audio data-key="82" src="/sounds/piano-octave-up/Fb6.wav"></audio> <audio data-key="80" src="/sounds/piano-octave-up/Fb7.wav"></audio>
+    <audio data-key="70" src="/sounds/piano-octave-up/G6.wav"></audio> <audio data-key="222" src="/sounds/piano-octave-up/G7.wav"></audio>
+    <audio data-key="84" src="/sounds/piano-octave-up/Gb6.wav"></audio> <audio data-key="219" src="/sounds/piano-octave-up/Gb7.wav"></audio>
+    <audio data-key="71" src="/sounds/piano-octave-up/A6.wav"></audio> <audio data-key="220" src="/sounds/piano-octave-up/A7.wav"></audio>
+    <audio data-key="89" src="/sounds/piano-octave-up/Ab6.wav"></audio> <audio data-key="221" src="/sounds/piano-octave-up/Ab7.wav"></audio>
+    <audio data-key="72" src="/sounds/piano-octave-up/B6.wav"></audio> <audio data-key="193" src="/sounds/piano-octave-up/B7.wav"></audio>
+  </section>
+
+<span id='alter'></span>
+
+  <section class="piano-octave-default">
+    <audio data-key="226"src="/sounds/piano-octave-default/C4.wav"></audio> <audio data-key="74" src="/sounds/piano-octave-default/C5.wav"></audio>
+    <audio data-key="81" src="/sounds/piano-octave-default/Cb4.wav"></audio> <audio data-key="73" src="/sounds/piano-octave-default/Cb5.wav"></audio>
+    <audio data-key="65" src="/sounds/piano-octave-default/D4.wav"></audio> <audio data-key="75" src="/sounds/piano-octave-default/D5.wav"></audio>
+    <audio data-key="87" src="/sounds/piano-octave-default/Db4.wav"></audio> <audio data-key="79" src="/sounds/piano-octave-default/Db5.wav"></audio>
+    <audio data-key="83" src="/sounds/piano-octave-default/E4.wav"></audio> <audio data-key="76" src="/sounds/piano-octave-default/E5.wav"></audio>
+    <audio data-key="68" src="/sounds/piano-octave-default/F4.wav"></audio> <audio data-key="186" src="/sounds/piano-octave-default/F5.wav"></audio>
+    <audio data-key="82" src="/sounds/piano-octave-default/Fb4.wav"></audio> <audio data-key="80" src="/sounds/piano-octave-default/Fb5.wav"></audio>
+    <audio data-key="70" src="/sounds/piano-octave-default/G4.wav"></audio> <audio data-key="222" src="/sounds/piano-octave-default/G5.wav"></audio>
+    <audio data-key="84" src="/sounds/piano-octave-default/Gb4.wav"></audio> <audio data-key="219" src="/sounds/piano-octave-default/Gb5.wav"></audio>
+    <audio data-key="71" src="/sounds/piano-octave-default/A4.wav"></audio> <audio data-key="220" src="/sounds/piano-octave-default/A5.wav"></audio>
+    <audio data-key="89" src="/sounds/piano-octave-default/Ab4.wav"></audio> <audio data-key="221" src="/sounds/piano-octave-default/Ab5.wav"></audio>
+    <audio data-key="72" src="/sounds/piano-octave-default/B4.wav"></audio> <audio data-key="193" src="/sounds/piano-octave-default/B5.wav"></audio>
+  </section>
+  <section class="bass-octave-default">
+    <audio data-key="226"src="/sounds/bass-octave-default/C4.wav"></audio> <audio data-key="74" src="/sounds/bass-octave-default/C5.wav"></audio>
+    <audio data-key="81" src="/sounds/bass-octave-default/Cb4.wav"></audio> <audio data-key="73" src="/sounds/bass-octave-default/Cb5.wav"></audio>
+    <audio data-key="65" src="/sounds/bass-octave-default/D4.wav"></audio> <audio data-key="75" src="/sounds/bass-octave-default/D5.wav"></audio>
+    <audio data-key="87" src="/sounds/bass-octave-default/Db4.wav"></audio> <audio data-key="79" src="/sounds/bass-octave-default/Db5.wav"></audio>
+    <audio data-key="83" src="/sounds/bass-octave-default/E4.wav"></audio> <audio data-key="76" src="/sounds/bass-octave-default/E5.wav"></audio>
+    <audio data-key="68" src="/sounds/bass-octave-default/F4.wav"></audio> <audio data-key="186" src="/sounds/bass-octave-default/F5.wav"></audio>
+    <audio data-key="82" src="/sounds/bass-octave-default/Fb4.wav"></audio> <audio data-key="80" src="/sounds/bass-octave-default/Fb5.wav"></audio>
+    <audio data-key="70" src="/sounds/bass-octave-default/G4.wav"></audio> <audio data-key="222" src="/sounds/bass-octave-default/G5.wav"></audio>
+    <audio data-key="84" src="/sounds/bass-octave-default/Gb4.wav"></audio> <audio data-key="219" src="/sounds/bass-octave-default/Gb5.wav"></audio>
+    <audio data-key="71" src="/sounds/bass-octave-default/A4.wav"></audio> <audio data-key="220" src="/sounds/bass-octave-default/A5.wav"></audio>
+    <audio data-key="89" src="/sounds/bass-octave-default/Ab4.wav"></audio> <audio data-key="221" src="/sounds/bass-octave-default/Ab5.wav"></audio>
+    <audio data-key="72" src="/sounds/bass-octave-default/B4.wav"></audio> <audio data-key="193" src="/sounds/bass-octave-default/B5.wav"></audio>
+  </section>
+ 
+  <section class="piano-octave-down">
+    <audio data-key="226"src="/sounds/piano-octave-down/C2.wav"></audio> <audio data-key="74" src="/sounds/piano-octave-down/C3.wav"></audio>
+    <audio data-key="81" src="/sounds/piano-octave-down/Cb2.wav"></audio> <audio data-key="73" src="/sounds/piano-octave-down/Cb3.wav"></audio>
+    <audio data-key="65" src="/sounds/piano-octave-down/D2.wav"></audio> <audio data-key="75" src="/sounds/piano-octave-down/D3.wav"></audio>
+    <audio data-key="87" src="/sounds/piano-octave-down/Db2.wav"></audio> <audio data-key="79" src="/sounds/piano-octave-down/Db3.wav"></audio>
+    <audio data-key="83" src="/sounds/piano-octave-down/E2.wav"></audio> <audio data-key="76" src="/sounds/piano-octave-down/E3.wav"></audio>
+    <audio data-key="68" src="/sounds/piano-octave-down/F2.wav"></audio> <audio data-key="186" src="/sounds/piano-octave-down/F3.wav"></audio>
+    <audio data-key="82" src="/sounds/piano-octave-down/Fb2.wav"></audio> <audio data-key="80" src="/sounds/piano-octave-down/Fb3.wav"></audio>
+    <audio data-key="70" src="/sounds/piano-octave-down/G2.wav"></audio> <audio data-key="222" src="/sounds/piano-octave-down/G3.wav"></audio>
+    <audio data-key="84" src="/sounds/piano-octave-down/Gb2.wav"></audio> <audio data-key="219" src="/sounds/piano-octave-down/Gb3.wav"></audio>
+    <audio data-key="71" src="/sounds/piano-octave-down/A2.wav"></audio> <audio data-key="220" src="/sounds/piano-octave-down/A3.wav"></audio>
+    <audio data-key="89" src="/sounds/piano-octave-down/Ab2.wav"></audio> <audio data-key="221" src="/sounds/piano-octave-down/Ab3.wav"></audio>
+    <audio data-key="72" src="/sounds/piano-octave-down/B2.wav"></audio> <audio data-key="193" src="/sounds/piano-octave-down/B3.wav"></audio>
+  </section>
+
+ 
+ <script src="main.js" type="module" defer></script>
+
+</body>
+
+</html>
