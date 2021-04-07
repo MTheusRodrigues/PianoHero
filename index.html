@@ -14,7 +14,8 @@
    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" 
    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" 
    crossorigin="anonymous" />
-  
+   <link rel="preconnect" href="https://fonts.gstatic.com">
+   <link href="https://fonts.googleapis.com/css2?family=Saira:wght@300;400;500&display=swap" rel="stylesheet">
 
 </head>
 
@@ -45,6 +46,13 @@
           </div>
           <div class="piano-display-container-lft"id='piano-display-center'>
             <span class="top-span">NOTES</span>
+            <div id="note">
+                C#5
+            </div>
+            <span >OCTAVE</span>
+            <div id="octave">
+              +1
+            </div>
           </div>
           <div class="piano-display-container-lft"id='piano-display-right'>
             <span class="top-span">MODE</span>
@@ -154,69 +162,195 @@
       </div>
     </div>
   </div>
-
+<!-------------------------------------------PIANO--------------------------------------------------------------------------------------->
   <section class="piano-octave-up">
-    <audio data-key="226"src="/sounds/piano-octave-up/C6.wav"></audio> <audio data-key="74" src="/sounds/piano-octave-up/C7.wav"></audio>
-    <audio data-key="81" src="/sounds/piano-octave-up/Cb6.wav"></audio> <audio data-key="73" src="/sounds/piano-octave-up/Cb7.wav"></audio>
-    <audio data-key="65" src="/sounds/piano-octave-up/D6.wav"></audio> <audio data-key="75" src="/sounds/piano-octave-up/D7.wav"></audio>
-    <audio data-key="87" src="/sounds/piano-octave-up/Db6.wav"></audio> <audio data-key="79" src="/sounds/piano-octave-up/Db7.wav"></audio>
-    <audio data-key="83" src="/sounds/piano-octave-up/E6.wav"></audio> <audio data-key="76" src="/sounds/piano-octave-up/E7.wav"></audio>
-    <audio data-key="68" src="/sounds/piano-octave-up/F6.wav"></audio> <audio data-key="186" src="/sounds/piano-octave-up/F7.wav"></audio>
-    <audio data-key="82" src="/sounds/piano-octave-up/Fb6.wav"></audio> <audio data-key="80" src="/sounds/piano-octave-up/Fb7.wav"></audio>
-    <audio data-key="70" src="/sounds/piano-octave-up/G6.wav"></audio> <audio data-key="222" src="/sounds/piano-octave-up/G7.wav"></audio>
-    <audio data-key="84" src="/sounds/piano-octave-up/Gb6.wav"></audio> <audio data-key="219" src="/sounds/piano-octave-up/Gb7.wav"></audio>
-    <audio data-key="71" src="/sounds/piano-octave-up/A6.wav"></audio> <audio data-key="220" src="/sounds/piano-octave-up/A7.wav"></audio>
-    <audio data-key="89" src="/sounds/piano-octave-up/Ab6.wav"></audio> <audio data-key="221" src="/sounds/piano-octave-up/Ab7.wav"></audio>
-    <audio data-key="72" src="/sounds/piano-octave-up/B6.wav"></audio> <audio data-key="193" src="/sounds/piano-octave-up/B7.wav"></audio>
+    <audio data-key="226"src="/sounds/piano/C6.mp3"></audio> <audio data-key="74" src="/sounds/piano/C7.mp3"></audio>
+    <audio data-key="81" src="/sounds/piano/Cb6.mp3"></audio> <audio data-key="73" src="/sounds/piano/Cb7.mp3"></audio>
+    <audio data-key="65" src="/sounds/piano/D6.mp3"></audio> <audio data-key="75" src="/sounds/piano/D7.mp3"></audio>
+    <audio data-key="87" src="/sounds/piano/Db6.mp3"></audio> <audio data-key="79" src="/sounds/piano/Db7.mp3"></audio>
+    <audio data-key="83" src="/sounds/piano/E6.mp3"></audio> <audio data-key="76" src="/sounds/piano/E7.mp3"></audio>
+    <audio data-key="68" src="/sounds/piano/F6.mp3"></audio> <audio data-key="186" src="/sounds/piano/F7.mp3"></audio>
+    <audio data-key="82" src="/sounds/piano/Fb6.mp3"></audio> <audio data-key="80" src="/sounds/piano/Fb7.mp3"></audio>
+    <audio data-key="70" src="/sounds/piano/G6.mp3"></audio> <audio data-key="222" src="/sounds/piano/G7.mp3"></audio>
+    <audio data-key="84" src="/sounds/piano/Gb6.mp3"></audio> <audio data-key="219" src="/sounds/piano/Gb7.mp3"></audio>
+    <audio data-key="71" src="/sounds/piano/A6.mp3"></audio> <audio data-key="220" src="/sounds/piano/A7.mp3"></audio>
+    <audio data-key="89" src="/sounds/piano/Ab6.mp3"></audio> <audio data-key="221" src="/sounds/piano/Ab7.mp3"></audio>
+    <audio data-key="72" src="/sounds/piano/B6.mp3"></audio> <audio data-key="193" src="/sounds/piano/B7.mp3"></audio>
   </section>
-
-<span id='alter'></span>
 
   <section class="piano-octave-default">
-    <audio data-key="226"src="/sounds/piano-octave-default/C4.wav"></audio> <audio data-key="74" src="/sounds/piano-octave-default/C5.wav"></audio>
-    <audio data-key="81" src="/sounds/piano-octave-default/Cb4.wav"></audio> <audio data-key="73" src="/sounds/piano-octave-default/Cb5.wav"></audio>
-    <audio data-key="65" src="/sounds/piano-octave-default/D4.wav"></audio> <audio data-key="75" src="/sounds/piano-octave-default/D5.wav"></audio>
-    <audio data-key="87" src="/sounds/piano-octave-default/Db4.wav"></audio> <audio data-key="79" src="/sounds/piano-octave-default/Db5.wav"></audio>
-    <audio data-key="83" src="/sounds/piano-octave-default/E4.wav"></audio> <audio data-key="76" src="/sounds/piano-octave-default/E5.wav"></audio>
-    <audio data-key="68" src="/sounds/piano-octave-default/F4.wav"></audio> <audio data-key="186" src="/sounds/piano-octave-default/F5.wav"></audio>
-    <audio data-key="82" src="/sounds/piano-octave-default/Fb4.wav"></audio> <audio data-key="80" src="/sounds/piano-octave-default/Fb5.wav"></audio>
-    <audio data-key="70" src="/sounds/piano-octave-default/G4.wav"></audio> <audio data-key="222" src="/sounds/piano-octave-default/G5.wav"></audio>
-    <audio data-key="84" src="/sounds/piano-octave-default/Gb4.wav"></audio> <audio data-key="219" src="/sounds/piano-octave-default/Gb5.wav"></audio>
-    <audio data-key="71" src="/sounds/piano-octave-default/A4.wav"></audio> <audio data-key="220" src="/sounds/piano-octave-default/A5.wav"></audio>
-    <audio data-key="89" src="/sounds/piano-octave-default/Ab4.wav"></audio> <audio data-key="221" src="/sounds/piano-octave-default/Ab5.wav"></audio>
-    <audio data-key="72" src="/sounds/piano-octave-default/B4.wav"></audio> <audio data-key="193" src="/sounds/piano-octave-default/B5.wav"></audio>
+    <audio data-key="226"src="/sounds/piano/C4.mp3"></audio> <audio data-key="74" src="/sounds/piano/C5.mp3"></audio>
+    <audio data-key="81" src="/sounds/piano/Cb4.mp3"></audio> <audio data-key="73" src="/sounds/piano/Cb5.mp3"></audio>
+    <audio data-key="65" src="/sounds/piano/D4.mp3"></audio> <audio data-key="75" src="/sounds/piano/D5.mp3"></audio>
+    <audio data-key="87" src="/sounds/piano/Db4.mp3"></audio> <audio data-key="79" src="/sounds/piano/Db5.mp3"></audio>
+    <audio data-key="83" src="/sounds/piano/E4.mp3"></audio> <audio data-key="76" src="/sounds/piano/E5.mp3"></audio>
+    <audio data-key="68" src="/sounds/piano/F4.mp3"></audio> <audio data-key="186" src="/sounds/piano/F5.mp3"></audio>
+    <audio data-key="82" src="/sounds/piano/Fb4.mp3"></audio> <audio data-key="80" src="/sounds/piano/Fb5.mp3"></audio>
+    <audio data-key="70" src="/sounds/piano/G4.mp3"></audio> <audio data-key="222" src="/sounds/piano/G5.mp3"></audio>
+    <audio data-key="84" src="/sounds/piano/Gb4.mp3"></audio> <audio data-key="219" src="/sounds/piano/Gb5.mp3"></audio>
+    <audio data-key="71" src="/sounds/piano/A4.mp3"></audio> <audio data-key="220" src="/sounds/piano/A5.mp3"></audio>
+    <audio data-key="89" src="/sounds/piano/Ab4.mp3"></audio> <audio data-key="221" src="/sounds/piano/Ab5.mp3"></audio>
+    <audio data-key="72" src="/sounds/piano/B4.mp3"></audio> <audio data-key="193" src="/sounds/piano/B5.mp3"></audio>
   </section>
-  <section class="bass-octave-default">
-    <audio data-key="226"src="/sounds/bass-octave-default/C4.wav"></audio> <audio data-key="74" src="/sounds/bass-octave-default/C5.wav"></audio>
-    <audio data-key="81" src="/sounds/bass-octave-default/Cb4.wav"></audio> <audio data-key="73" src="/sounds/bass-octave-default/Cb5.wav"></audio>
-    <audio data-key="65" src="/sounds/bass-octave-default/D4.wav"></audio> <audio data-key="75" src="/sounds/bass-octave-default/D5.wav"></audio>
-    <audio data-key="87" src="/sounds/bass-octave-default/Db4.wav"></audio> <audio data-key="79" src="/sounds/bass-octave-default/Db5.wav"></audio>
-    <audio data-key="83" src="/sounds/bass-octave-default/E4.wav"></audio> <audio data-key="76" src="/sounds/bass-octave-default/E5.wav"></audio>
-    <audio data-key="68" src="/sounds/bass-octave-default/F4.wav"></audio> <audio data-key="186" src="/sounds/bass-octave-default/F5.wav"></audio>
-    <audio data-key="82" src="/sounds/bass-octave-default/Fb4.wav"></audio> <audio data-key="80" src="/sounds/bass-octave-default/Fb5.wav"></audio>
-    <audio data-key="70" src="/sounds/bass-octave-default/G4.wav"></audio> <audio data-key="222" src="/sounds/bass-octave-default/G5.wav"></audio>
-    <audio data-key="84" src="/sounds/bass-octave-default/Gb4.wav"></audio> <audio data-key="219" src="/sounds/bass-octave-default/Gb5.wav"></audio>
-    <audio data-key="71" src="/sounds/bass-octave-default/A4.wav"></audio> <audio data-key="220" src="/sounds/bass-octave-default/A5.wav"></audio>
-    <audio data-key="89" src="/sounds/bass-octave-default/Ab4.wav"></audio> <audio data-key="221" src="/sounds/bass-octave-default/Ab5.wav"></audio>
-    <audio data-key="72" src="/sounds/bass-octave-default/B4.wav"></audio> <audio data-key="193" src="/sounds/bass-octave-default/B5.wav"></audio>
-  </section>
- 
+  
   <section class="piano-octave-down">
-    <audio data-key="226"src="/sounds/piano-octave-down/C2.wav"></audio> <audio data-key="74" src="/sounds/piano-octave-down/C3.wav"></audio>
-    <audio data-key="81" src="/sounds/piano-octave-down/Cb2.wav"></audio> <audio data-key="73" src="/sounds/piano-octave-down/Cb3.wav"></audio>
-    <audio data-key="65" src="/sounds/piano-octave-down/D2.wav"></audio> <audio data-key="75" src="/sounds/piano-octave-down/D3.wav"></audio>
-    <audio data-key="87" src="/sounds/piano-octave-down/Db2.wav"></audio> <audio data-key="79" src="/sounds/piano-octave-down/Db3.wav"></audio>
-    <audio data-key="83" src="/sounds/piano-octave-down/E2.wav"></audio> <audio data-key="76" src="/sounds/piano-octave-down/E3.wav"></audio>
-    <audio data-key="68" src="/sounds/piano-octave-down/F2.wav"></audio> <audio data-key="186" src="/sounds/piano-octave-down/F3.wav"></audio>
-    <audio data-key="82" src="/sounds/piano-octave-down/Fb2.wav"></audio> <audio data-key="80" src="/sounds/piano-octave-down/Fb3.wav"></audio>
-    <audio data-key="70" src="/sounds/piano-octave-down/G2.wav"></audio> <audio data-key="222" src="/sounds/piano-octave-down/G3.wav"></audio>
-    <audio data-key="84" src="/sounds/piano-octave-down/Gb2.wav"></audio> <audio data-key="219" src="/sounds/piano-octave-down/Gb3.wav"></audio>
-    <audio data-key="71" src="/sounds/piano-octave-down/A2.wav"></audio> <audio data-key="220" src="/sounds/piano-octave-down/A3.wav"></audio>
-    <audio data-key="89" src="/sounds/piano-octave-down/Ab2.wav"></audio> <audio data-key="221" src="/sounds/piano-octave-down/Ab3.wav"></audio>
-    <audio data-key="72" src="/sounds/piano-octave-down/B2.wav"></audio> <audio data-key="193" src="/sounds/piano-octave-down/B3.wav"></audio>
+    <audio data-key="226"src="/sounds/piano/C2.mp3"></audio> <audio data-key="74" src="/sounds/piano/C3.mp3"></audio>
+    <audio data-key="81" src="/sounds/piano/Cb2.mp3"></audio> <audio data-key="73" src="/sounds/piano/Cb3.mp3"></audio>
+    <audio data-key="65" src="/sounds/piano/D2.mp3"></audio> <audio data-key="75" src="/sounds/piano/D3.mp3"></audio>
+    <audio data-key="87" src="/sounds/piano/Db2.mp3"></audio> <audio data-key="79" src="/sounds/piano/Db3.mp3"></audio>
+    <audio data-key="83" src="/sounds/piano/E2.mp3"></audio> <audio data-key="76" src="/sounds/piano/E3.mp3"></audio>
+    <audio data-key="68" src="/sounds/piano/F2.mp3"></audio> <audio data-key="186" src="/sounds/piano/F3.mp3"></audio>
+    <audio data-key="82" src="/sounds/piano/Fb2.mp3"></audio> <audio data-key="80" src="/sounds/piano/Fb3.mp3"></audio>
+    <audio data-key="70" src="/sounds/piano/G2.mp3"></audio> <audio data-key="222" src="/sounds/piano/G3.mp3"></audio>
+    <audio data-key="84" src="/sounds/piano/Gb2.mp3"></audio> <audio data-key="219" src="/sounds/piano/Gb3.mp3"></audio>
+    <audio data-key="71" src="/sounds/piano/A2.mp3"></audio> <audio data-key="220" src="/sounds/piano/A3.mp3"></audio>
+    <audio data-key="89" src="/sounds/piano/Ab2.mp3"></audio> <audio data-key="221" src="/sounds/piano/Ab3.mp3"></audio>
+    <audio data-key="72" src="/sounds/piano/B2.mp3"></audio> <audio data-key="193" src="/sounds/piano/B3.mp3"></audio>
+  </section>
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+<!-------------------------------------------SYNTH------------------------------------------------------------------------------------->
+
+<section class="synth-octave-up">
+  <audio data-key="226"src="/sounds/synth/C6.mp3"></audio> <audio data-key="74" src="/sounds/synth/C7.mp3"></audio>
+  <audio data-key="81" src="/sounds/synth/Cb6.mp3"></audio> <audio data-key="73" src="/sounds/synth/Cb7.mp3"></audio>
+  <audio data-key="65" src="/sounds/synth/D6.mp3"></audio> <audio data-key="75" src="/sounds/synth/D7.mp3"></audio>
+  <audio data-key="87" src="/sounds/synth/Db6.mp3"></audio> <audio data-key="79" src="/sounds/synth/Db7.mp3"></audio>
+  <audio data-key="83" src="/sounds/synth/E6.mp3"></audio> <audio data-key="76" src="/sounds/synth/E7.mp3"></audio>
+  <audio data-key="68" src="/sounds/synth/F6.mp3"></audio> <audio data-key="186" src="/sounds/synth/F7.mp3"></audio>
+  <audio data-key="82" src="/sounds/synth/Fb6.mp3"></audio> <audio data-key="80" src="/sounds/synth/Fb7.mp3"></audio>
+  <audio data-key="70" src="/sounds/synth/G6.mp3"></audio> <audio data-key="222" src="/sounds/synth/G7.mp3"></audio>
+  <audio data-key="84" src="/sounds/synth/Gb6.mp3"></audio> <audio data-key="219" src="/sounds/synth/Gb7.mp3"></audio>
+  <audio data-key="71" src="/sounds/synth/A6.mp3"></audio> <audio data-key="220" src="/sounds/synth/A7.mp3"></audio>
+  <audio data-key="89" src="/sounds/synth/Ab6.mp3"></audio> <audio data-key="221" src="/sounds/synth/Ab7.mp3"></audio>
+  <audio data-key="72" src="/sounds/synth/B6.mp3"></audio> <audio data-key="193" src="/sounds/synth/B7.mp3"></audio>
+</section>
+
+
+<section class="synth-octave-default">
+  <audio data-key="226"src="/sounds/synth/C4.mp3"></audio> <audio data-key="74" src="/sounds/synth/C5.mp3"></audio>
+  <audio data-key="81" src="/sounds/synth/Cb4.mp3"></audio> <audio data-key="73" src="/sounds/synth/Cb5.mp3"></audio>
+  <audio data-key="65" src="/sounds/synth/D4.mp3"></audio> <audio data-key="75" src="/sounds/synth/D5.mp3"></audio>
+  <audio data-key="87" src="/sounds/synth/Db4.mp3"></audio> <audio data-key="79" src="/sounds/synth/Db5.mp3"></audio>
+  <audio data-key="83" src="/sounds/synth/E4.mp3"></audio> <audio data-key="76" src="/sounds/synth/E5.mp3"></audio>
+  <audio data-key="68" src="/sounds/synth/F4.mp3"></audio> <audio data-key="186" src="/sounds/synth/F5.mp3"></audio>
+  <audio data-key="82" src="/sounds/synth/Fb4.mp3"></audio> <audio data-key="80" src="/sounds/synth/Fb5.mp3"></audio>
+  <audio data-key="70" src="/sounds/synth/G4.mp3"></audio> <audio data-key="222" src="/sounds/synth/G5.mp3"></audio>
+  <audio data-key="84" src="/sounds/synth/Gb4.mp3"></audio> <audio data-key="219" src="/sounds/synth/Gb5.mp3"></audio>
+  <audio data-key="71" src="/sounds/synth/A4.mp3"></audio> <audio data-key="220" src="/sounds/synth/A5.mp3"></audio>
+  <audio data-key="89" src="/sounds/synth/Ab4.mp3"></audio> <audio data-key="221" src="/sounds/synth/Ab5.mp3"></audio>
+  <audio data-key="72" src="/sounds/synth/B4.mp3"></audio> <audio data-key="193" src="/sounds/synth/B5.mp3"></audio>
+</section>
+
+<section class="synth-octave-down">
+  <audio data-key="226"src="/sounds/synth/C2.mp3"></audio> <audio data-key="74" src="/sounds/synth/C3.mp3"></audio>
+  <audio data-key="81" src="/sounds/synth/Cb2.mp3"></audio> <audio data-key="73" src="/sounds/synth/Cb3.mp3"></audio>
+  <audio data-key="65" src="/sounds/synth/D2.mp3"></audio> <audio data-key="75" src="/sounds/synth/D3.mp3"></audio>
+  <audio data-key="87" src="/sounds/synth/Db2.mp3"></audio> <audio data-key="79" src="/sounds/synth/Db3.mp3"></audio>
+  <audio data-key="83" src="/sounds/synth/E2.mp3"></audio> <audio data-key="76" src="/sounds/synth/E3.mp3"></audio>
+  <audio data-key="68" src="/sounds/synth/F2.mp3"></audio> <audio data-key="186" src="/sounds/synth/F3.mp3"></audio>
+  <audio data-key="82" src="/sounds/synth/Fb2.mp3"></audio> <audio data-key="80" src="/sounds/synth/Fb3.mp3"></audio>
+  <audio data-key="70" src="/sounds/synth/G2.mp3"></audio> <audio data-key="222" src="/sounds/synth/G3.mp3"></audio>
+  <audio data-key="84" src="/sounds/synth/Gb2.mp3"></audio> <audio data-key="219" src="/sounds/synth/Gb3.mp3"></audio>
+  <audio data-key="71" src="/sounds/synth/A2.mp3"></audio> <audio data-key="220" src="/sounds/synth/A3.mp3"></audio>
+  <audio data-key="89" src="/sounds/synth/Ab2.mp3"></audio> <audio data-key="221" src="/sounds/synth/Ab3.mp3"></audio>
+  <audio data-key="72" src="/sounds/synth/B2.mp3"></audio> <audio data-key="193" src="/sounds/synth/B3.mp3"></audio>
+</section>
+
+<!-------------------------------------------FLUTE--------------------------------------------------------------------------------------->
+
+<section class="flute-octave-up">
+  <audio data-key="226"src="/sounds/flute/C6.mp3"></audio> <audio data-key="74" src="/sounds/flute/C7.mp3"></audio>
+  <audio data-key="81" src="/sounds/flute/Cb6.mp3"></audio> <audio data-key="73" src="/sounds/flute/Cb7.mp3"></audio>
+  <audio data-key="65" src="/sounds/flute/D6.mp3"></audio> <audio data-key="75" src="/sounds/flute/D7.mp3"></audio>
+  <audio data-key="87" src="/sounds/flute/Db6.mp3"></audio> <audio data-key="79" src="/sounds/flute/Db7.mp3"></audio>
+  <audio data-key="83" src="/sounds/flute/E6.mp3"></audio> <audio data-key="76" src="/sounds/flute/E7.mp3"></audio>
+  <audio data-key="68" src="/sounds/flute/F6.mp3"></audio> <audio data-key="186" src="/sounds/flute/F7.mp3"></audio>
+  <audio data-key="82" src="/sounds/flute/Fb6.mp3"></audio> <audio data-key="80" src="/sounds/flute/Fb7.mp3"></audio>
+  <audio data-key="70" src="/sounds/flute/G6.mp3"></audio> <audio data-key="222" src="/sounds/flute/G7.mp3"></audio>
+  <audio data-key="84" src="/sounds/flute/Gb6.mp3"></audio> <audio data-key="219" src="/sounds/flute/Gb7.mp3"></audio>
+  <audio data-key="71" src="/sounds/flute/A6.mp3"></audio> <audio data-key="220" src="/sounds/flute/A7.mp3"></audio>
+  <audio data-key="89" src="/sounds/flute/Ab6.mp3"></audio> <audio data-key="221" src="/sounds/flute/Ab7.mp3"></audio>
+  <audio data-key="72" src="/sounds/flute/B6.mp3"></audio> <audio data-key="193" src="/sounds/flute/B7.mp3"></audio>
+</section>
+
+  <section class="flute-octave-default">
+    <audio data-key="226"src="/sounds/flute/C4.mp3"></audio> <audio data-key="74" src="/sounds/flute/C5.mp3"></audio>
+    <audio data-key="81" src="/sounds/flute/Cb4.mp3"></audio> <audio data-key="73" src="/sounds/flute/Cb5.mp3"></audio>
+    <audio data-key="65" src="/sounds/flute/D4.mp3"></audio> <audio data-key="75" src="/sounds/flute/D5.mp3"></audio>
+    <audio data-key="87" src="/sounds/flute/Db4.mp3"></audio> <audio data-key="79" src="/sounds/flute/Db5.mp3"></audio>
+    <audio data-key="83" src="/sounds/flute/E4.mp3"></audio> <audio data-key="76" src="/sounds/flute/E5.mp3"></audio>
+    <audio data-key="68" src="/sounds/flute/F4.mp3"></audio> <audio data-key="186" src="/sounds/flute/F5.mp3"></audio>
+    <audio data-key="82" src="/sounds/flute/Fb4.mp3"></audio> <audio data-key="80" src="/sounds/flute/Fb5.mp3"></audio>
+    <audio data-key="70" src="/sounds/flute/G4.mp3"></audio> <audio data-key="222" src="/sounds/flute/G5.mp3"></audio>
+    <audio data-key="84" src="/sounds/flute/Gb4.mp3"></audio> <audio data-key="219" src="/sounds/flute/Gb5.mp3"></audio>
+    <audio data-key="71" src="/sounds/flute/A4.mp3"></audio> <audio data-key="220" src="/sounds/flute/A5.mp3"></audio>
+    <audio data-key="89" src="/sounds/flute/Ab4.mp3"></audio> <audio data-key="221" src="/sounds/flute/Ab5.mp3"></audio>
+    <audio data-key="72" src="/sounds/flute/B4.mp3"></audio> <audio data-key="193" src="/sounds/flute/B5.mp3"></audio>
   </section>
 
- 
+  <section class="flute-octave-down">
+    <audio data-key="226"src="/sounds/flute/C2.mp3"></audio> <audio data-key="74" src="/sounds/flute/C3.mp3"></audio>
+    <audio data-key="81" src="/sounds/flute/Cb2.mp3"></audio> <audio data-key="73" src="/sounds/flute/Cb3.mp3"></audio>
+    <audio data-key="65" src="/sounds/flute/D2.mp3"></audio> <audio data-key="75" src="/sounds/flute/D3.mp3"></audio>
+    <audio data-key="87" src="/sounds/flute/Db2.mp3"></audio> <audio data-key="79" src="/sounds/flute/Db3.mp3"></audio>
+    <audio data-key="83" src="/sounds/flute/E2.mp3"></audio> <audio data-key="76" src="/sounds/flute/E3.mp3"></audio>
+    <audio data-key="68" src="/sounds/flute/F2.mp3"></audio> <audio data-key="186" src="/sounds/flute/F3.mp3"></audio>
+    <audio data-key="82" src="/sounds/flute/Fb2.mp3"></audio> <audio data-key="80" src="/sounds/flute/Fb3.mp3"></audio>
+    <audio data-key="70" src="/sounds/flute/G2.mp3"></audio> <audio data-key="222" src="/sounds/flute/G3.mp3"></audio>
+    <audio data-key="84" src="/sounds/flute/Gb2.mp3"></audio> <audio data-key="219" src="/sounds/flute/Gb3.mp3"></audio>
+    <audio data-key="71" src="/sounds/flute/A2.mp3"></audio> <audio data-key="220" src="/sounds/flute/A3.mp3"></audio>
+    <audio data-key="89" src="/sounds/flute/Ab2.mp3"></audio> <audio data-key="221" src="/sounds/flute/Ab3.mp3"></audio>
+    <audio data-key="72" src="/sounds/flute/B2.mp3"></audio> <audio data-key="193" src="/sounds/flute/B3.mp3"></audio>
+  </section>
+
+
+<!-------------------------------------------BASS--------------------------------------------------------------------------------------->
+<section class="bass-octave-up">
+  <audio data-key="226"src="/sounds/bass/C6.mp3"></audio> <audio data-key="74" src="/sounds/bass/C7.mp3"></audio>
+  <audio data-key="81" src="/sounds/bass/Cb6.mp3"></audio> <audio data-key="73" src="/sounds/bass/Cb7.mp3"></audio>
+  <audio data-key="65" src="/sounds/bass/D6.mp3"></audio> <audio data-key="75" src="/sounds/bass/D7.mp3"></audio>
+  <audio data-key="87" src="/sounds/bass/Db6.mp3"></audio> <audio data-key="79" src="/sounds/bass/Db7.mp3"></audio>
+  <audio data-key="83" src="/sounds/bass/E6.mp3"></audio> <audio data-key="76" src="/sounds/bass/E7.mp3"></audio>
+  <audio data-key="68" src="/sounds/bass/F6.mp3"></audio> <audio data-key="186" src="/sounds/bass/F7.mp3"></audio>
+  <audio data-key="82" src="/sounds/bass/Fb6.mp3"></audio> <audio data-key="80" src="/sounds/bass/Fb7.mp3"></audio>
+  <audio data-key="70" src="/sounds/bass/G6.mp3"></audio> <audio data-key="222" src="/sounds/bass/G7.mp3"></audio>
+  <audio data-key="84" src="/sounds/bass/Gb6.mp3"></audio> <audio data-key="219" src="/sounds/bass/Gb7.mp3"></audio>
+  <audio data-key="71" src="/sounds/bass/A6.mp3"></audio> <audio data-key="220" src="/sounds/bass/A7.mp3"></audio>
+  <audio data-key="89" src="/sounds/bass/Ab6.mp3"></audio> <audio data-key="221" src="/sounds/bass/Ab7.mp3"></audio>
+  <audio data-key="72" src="/sounds/bass/B6.mp3"></audio> <audio data-key="193" src="/sounds/bass/B7.mp3"></audio>
+</section>
+
+  <section class="bass-octave-default">
+    <audio data-key="226"src="/sounds/bass/C4.mp3"></audio> <audio data-key="74" src="/sounds/bass/C5.mp3"></audio>
+    <audio data-key="81" src="/sounds/bass/Cb4.mp3"></audio> <audio data-key="73" src="/sounds/bass/Cb5.mp3"></audio>
+    <audio data-key="65" src="/sounds/bass/D4.mp3"></audio> <audio data-key="75" src="/sounds/bass/D5.mp3"></audio>
+    <audio data-key="87" src="/sounds/bass/Db4.mp3"></audio> <audio data-key="79" src="/sounds/bass/Db5.mp3"></audio>
+    <audio data-key="83" src="/sounds/bass/E4.mp3"></audio> <audio data-key="76" src="/sounds/bass/E5.mp3"></audio>
+    <audio data-key="68" src="/sounds/bass/F4.mp3"></audio> <audio data-key="186" src="/sounds/bass/F5.mp3"></audio>
+    <audio data-key="82" src="/sounds/bass/Fb4.mp3"></audio> <audio data-key="80" src="/sounds/bass/Fb5.mp3"></audio>
+    <audio data-key="70" src="/sounds/bass/G4.mp3"></audio> <audio data-key="222" src="/sounds/bass/G5.mp3"></audio>
+    <audio data-key="84" src="/sounds/bass/Gb4.mp3"></audio> <audio data-key="219" src="/sounds/bass/Gb5.mp3"></audio>
+    <audio data-key="71" src="/sounds/bass/A4.mp3"></audio> <audio data-key="220" src="/sounds/bass/A5.mp3"></audio>
+    <audio data-key="89" src="/sounds/bass/Ab4.mp3"></audio> <audio data-key="221" src="/sounds/bass/Ab5.mp3"></audio>
+    <audio data-key="72" src="/sounds/bass/B4.mp3"></audio> <audio data-key="193" src="/sounds/bass/B5.mp3"></audio>
+  </section>
+
+  <section class="bass-octave-down">
+    <audio data-key="226"src="/sounds/bass/C2.mp3"></audio> <audio data-key="74" src="/sounds/bass/C3.mp3"></audio>
+    <audio data-key="81" src="/sounds/bass/Cb2.mp3"></audio> <audio data-key="73" src="/sounds/bass/Cb3.mp3"></audio>
+    <audio data-key="65" src="/sounds/bass/D2.mp3"></audio> <audio data-key="75" src="/sounds/bass/D3.mp3"></audio>
+    <audio data-key="87" src="/sounds/bass/Db2.mp3"></audio> <audio data-key="79" src="/sounds/bass/Db3.mp3"></audio>
+    <audio data-key="83" src="/sounds/bass/E2.mp3"></audio> <audio data-key="76" src="/sounds/bass/E3.mp3"></audio>
+    <audio data-key="68" src="/sounds/bass/F2.mp3"></audio> <audio data-key="186" src="/sounds/bass/F3.mp3"></audio>
+    <audio data-key="82" src="/sounds/bass/Fb2.mp3"></audio> <audio data-key="80" src="/sounds/bass/Fb3.mp3"></audio>
+    <audio data-key="70" src="/sounds/bass/G2.mp3"></audio> <audio data-key="222" src="/sounds/bass/G3.mp3"></audio>
+    <audio data-key="84" src="/sounds/bass/Gb2.mp3"></audio> <audio data-key="219" src="/sounds/bass/Gb3.mp3"></audio>
+    <audio data-key="71" src="/sounds/bass/A2.mp3"></audio> <audio data-key="220" src="/sounds/bass/A3.mp3"></audio>
+    <audio data-key="89" src="/sounds/bass/Ab2.mp3"></audio> <audio data-key="221" src="/sounds/bass/Ab3.mp3"></audio>
+    <audio data-key="72" src="/sounds/bass/B2.mp3"></audio> <audio data-key="193" src="/sounds/bass/B3.mp3"></audio>
+  </section>
+  <!-------------------------------------------------------------------------------------------------------------------------->
  <script src="main.js" type="module" defer></script>
 
 </body>

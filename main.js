@@ -58,12 +58,8 @@ function getKeyCode(event) {
   function playAudio(audioKeyCode) {
 
     let instrumentPlay = (newInstr._nameInstrument)
-
     if (instrumentPlay === 'guitar') {
-
       let instrumentPlayOctave = (newInstr._octaveInstrument)
-
-
       if (instrumentPlayOctave === 'octoUp'){
         const audio = document.querySelector(`.piano-octave-up audio[data-key="${audioKeyCode}"]`)
         audio.currentTime = 0;
@@ -79,25 +75,70 @@ function getKeyCode(event) {
         audio.currentTime = 0;
         audio.play()
       }
+    }
+
+    if (instrumentPlay === 'synth') {
+      let instrumentPlayOctave = (newInstr._octaveInstrument)
+      if (instrumentPlayOctave === 'octoUp'){
+        const audio = document.querySelector(`.synth-octave-up audio[data-key="${audioKeyCode}"]`)
+        audio.currentTime = 0;
+        audio.play()
+      }
+      if (instrumentPlayOctave === 'octoDef'){
+        const audio = document.querySelector(`.synth-octave-default audio[data-key="${audioKeyCode}"]`)
+        audio.currentTime = 0;
+        audio.play()
+      }
+      if (instrumentPlayOctave === 'octoDown'){
+        const audio = document.querySelector(`.synth-octave-down audio[data-key="${audioKeyCode}"]`)
+        audio.currentTime = 0;
+        audio.play()
+      }
+    }
+
+    if (instrumentPlay === 'flute') {
+      let instrumentPlayOctave = (newInstr._octaveInstrument)
+      if (instrumentPlayOctave === 'octoUp'){
+        const audio = document.querySelector(`.flute-octave-up audio[data-key="${audioKeyCode}"]`)
+        audio.currentTime = 0;
+        audio.play()
+      }
+      if (instrumentPlayOctave === 'octoDef'){
+        const audio = document.querySelector(`.flute-octave-default audio[data-key="${audioKeyCode}"]`)
+        audio.currentTime = 0;
+        audio.play()
+      }
+      if (instrumentPlayOctave === 'octoDown'){
+        const audio = document.querySelector(`.flute-octave-down audio[data-key="${audioKeyCode}"]`)
+        audio.currentTime = 0;
+        audio.play()
+      }
 
     }
+
+
     if (instrumentPlay === 'bass') {
-      const audio = document.querySelector(`.bass-octave-default audio[data-key="${audioKeyCode}"]`)
-    audio.currentTime = 0;
-    audio.play()
+      let instrumentPlayOctave = (newInstr._octaveInstrument)
+      if (instrumentPlayOctave === 'octoUp'){
+        const audio = document.querySelector(`.bass-octave-up audio[data-key="${audioKeyCode}"]`)
+        audio.currentTime = 0;
+        audio.play()
+      }
+      if (instrumentPlayOctave === 'octoDef'){
+        const audio = document.querySelector(`.bass-octave-default audio[data-key="${audioKeyCode}"]`)
+        audio.currentTime = 0;
+        audio.play()
+      }
+      if (instrumentPlayOctave === 'octoDown'){
+        const audio = document.querySelector(`.bass-octave-down audio[data-key="${audioKeyCode}"]`)
+        audio.currentTime = 0;
+        audio.play()
+      }
     }
-    if (instrumentPlay === 'synth') {
-      const audio = document.querySelector(`.piano-octave-down audio[data-key="${audioKeyCode}"]`)
-    audio.currentTime = 0;
-    audio.play()
-    }
-    if (instrumentPlay === 'flute') {
-      const audio = document.querySelector(`.piano-octave-up audio[data-key="${audioKeyCode}"]`)
-    audio.currentTime = 0;
-    audio.play()
-    }
-    
   }
+   
+    
+  
 
 function removePlayingClass(event) {
   event.target.classList.remove("playing")
@@ -111,6 +152,7 @@ function registerEvents() {
   })
 
   window.addEventListener("keydown", playNote)
+
 }
 const displayL = document.querySelector('#piano-display-lft')
 const displayR = document.querySelector('#piano-display-right')
@@ -203,14 +245,29 @@ function insertPianoPlay() {
   insertIconPianoDisplay()
 }
 
+function insertSynthPlay() {
+  newInstr._octaveInstrument = 'octoDef'
+  newInstr._nameInstrument = 'synth'
+  
+  insertIconSynthDisplay()
+}
 
+function insertFlutePlay() {
+  newInstr._octaveInstrument = 'octoDef'
+  newInstr._nameInstrument = 'flute'
+  
+  insertIconFluteDisplay()
+}
 
 function insertBassPlay() {
-  
+  newInstr._octaveInstrument = 'octoDef'
   newInstr._nameInstrument = 'bass'
   
   insertIconBassDisplay()
 }
+
+
+
 
 
 function insertOctaveUp() {
@@ -233,9 +290,9 @@ function insertOctaveDown() {
 
 btnPiano.addEventListener('click',insertPianoPlay )
 btnGuitar.addEventListener('click', insertIconGuitarDisplay)
-btnSynth.addEventListener('click', insertIconSynthDisplay)
+btnSynth.addEventListener('click', insertSynthPlay)
 btnViolin.addEventListener('click', insertIconViolinDisplay)
-btnFlute.addEventListener('click', insertIconFluteDisplay)
+btnFlute.addEventListener('click', insertFlutePlay)
 btnBass.addEventListener('click', insertBassPlay)
 
 btnOctaveUp.addEventListener('click', insertOctaveUp)

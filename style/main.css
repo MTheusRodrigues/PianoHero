@@ -6,6 +6,7 @@
 }
 body{
     background: rgb(199, 199, 199);
+    font-family: 'Saira', sans-serif;
 }
 
 #piano{
@@ -80,7 +81,6 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 1rem;
     color: rgb(0, 202, 216);
     font-weight: 900;
@@ -118,7 +118,6 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 1rem;
     color: rgb(0, 202, 216);
     font-weight: 900;
@@ -180,10 +179,9 @@ body{
 }
 #span-instruments span {
     font: .6em sans-serif;
-    font-weight: 800;
-    margin-top: .2rem;
+    font-weight: 600;
     background: rgb(0, 247, 255);
-    padding: 0 .3rem;
+    padding: 0 .2rem;
     border-radius: 3px;
     cursor: default;
     
@@ -231,7 +229,7 @@ body{
     align-items: center;
     text-decoration: none;
     outline: none;
-    background: rgb(0, 0, 0);
+    background: rgb(104, 104, 104);
     border: 2px solid rgb(0, 174, 255);
     border-radius: 4px;
     margin: 0 .5rem;
@@ -240,7 +238,7 @@ body{
 .piano-display-container-lft {
     width:8rem;
     height: 100%;
-    background: #000000;
+    background: #6b6b6b;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -249,7 +247,6 @@ body{
     
 }
 .top-span {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #00eef7;
     position: absolute;
     font-size: .8rem;
@@ -257,8 +254,7 @@ body{
     
 }
 #span-dispaly {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: 800;
+    font-weight: 500;
     font-size: .7rem;
     padding: .2rem 0;
     display: flex;
@@ -268,7 +264,7 @@ body{
     border-radius: 4px;
     background: rgba(168, 168, 168, 0);
     color: #ffffff;
-    margin-bottom: -1rem;
+    margin-bottom: -1.5rem;
 }
 .piano-controls {
     width: 25%;
@@ -363,7 +359,7 @@ body{
 }
 .span span {
     font: .6em sans-serif;
-    font-weight: 800;
+    font-weight: 600;
     margin-top: .2rem;
     background: rgb(0, 255, 242);
     padding: 0 .3rem;
