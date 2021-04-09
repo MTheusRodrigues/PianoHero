@@ -1,3 +1,28 @@
+:root {
+    --left-color: rgb(44, 44, 44);
+    --right-color: rgb(0, 0, 0);
+    --top-color: rgb(0, 0, 0);
+    --top-color-display: rgb(155, 155, 155);
+    --center-color-display: rgb(121, 121, 121);
+    --bottom-color-display: rgb(228, 228, 228);
+    --top-color-body: rgb(12, 119, 143);
+    --center-color-body: rgb(231, 231, 231);
+    --bottom-color-body: rgb(230, 243, 243);
+
+    --top-color-body-display: rgb(220, 248, 255);
+  
+    --bottom-color-body-display: rgb(0, 140, 255);
+
+    --center-color: rgb(39, 39, 39);
+    --bottom-color: rgb(0, 0, 0);
+    --my-gradient: linear-gradient(var(--top-color), var(--center-color), var(--bottom-color));
+    --my-gradient-main: linear-gradient(var(--bottom-color), var(--left-color), var( --right-color));
+    --my-gradient-display: linear-gradient(var(--bottom-color-display), var(--center-color-display), var(--top-color-display));
+    --my-gradient-body: linear-gradient(var(--bottom-color-body), var(--center-color-body), var(--top-color-body));
+    --my-gradient-body-display: linear-gradient(var(--bottom-color-body-display), var( --top-color-body-display),var(--bottom-color-body-display));
+
+}
+
 *{
     margin:0;
     padding:0;
@@ -5,23 +30,47 @@
     box-sizing:border-box
 }
 body{
-    background: rgb(199, 199, 199);
+    height: 100vh;
+    width: 100%;
+    background: var(--my-gradient-body);
     font-family: 'Saira', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 4rem;
 }
-
-#piano{
+#main--piano-container {
+    background: var(--my-gradient-main);
+    height: 28rem;
+    width: 60rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
-    top: 10rem;
+    border-radius: 30px 30px 60px 60px;
+    border-top: 5px  solid #616161;
+    border-left: 10px  solid #252525;
+    border-right: 10px  solid #202020;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.685);
+
+}
+#piano{
+    top: 1rem;
+    position: relative;
     width: 100%;
     max-width: 50rem;
     height: 25rem;
-    margin: 1rem auto;
-    border-radius: 20px;
+    border-top: 6px solid rgb(141, 141, 141);
+    border-left: 4px solid rgb(48, 48, 48);
+    border-right: 4px solid rgb(48, 48, 48);
+    border-bottom: 1px solid rgb(0, 0, 0);
+    border-radius: 10px 10px 10px 10px;
     overflow: hidden;
-    background: rgb(0, 0, 0);
-    -webkit-box-shadow: 0 0 3.75rem rgb(219, 219, 219);
-    box-shadow: 0 0 3.75rem rgb(219, 219, 219);
-    border: 2px solid #00ffea;
+    background: var(--my-gradient);
+    -webkit-box-shadow: 0 0 3.75rem rgb(199, 199, 199);
+    box-shadow: 0 0 3.75rem rgb(37, 37, 37);
+    
+
     
 }
 #piano-header {
@@ -30,7 +79,7 @@ body{
     display: flex;
     height: 9rem;
     width:97%;
-    background: rgb(0, 0, 0);
+    background: rgb(31, 31, 31);
     border-radius: 4px;
 }
 #piano-container{
@@ -168,7 +217,7 @@ body{
     align-items: center;
     text-decoration: none;
     outline: none;
-    background: rgb(255, 255, 255);
+    background: var(--my-gradient-display);
     border: 2px solid rgb(0, 217, 255);
     border-radius: 4px;
 }
@@ -193,7 +242,7 @@ body{
     width: 3rem;
     height: 3rem;
     margin: .2rem .2rem;
-    background: #c7c7c7;
+    background: #ffffff;
     padding: .3rem;
     border-radius: 5px;
     transition: .3s;
@@ -204,6 +253,7 @@ body{
     background: rgb(0, 255, 242);
     transition: .3s;
     cursor: pointer;
+    transform: scale(1.1, 1.1);
 }
 .instruments:active {
     background: rgb(253, 253, 253);
@@ -214,12 +264,17 @@ body{
     width: 5rem;
     height: 5rem;
     margin: .2rem .2rem;
-    background: #00eef7;
-    padding: .3rem;
-    border-radius: 5px;
-    transition: .3s;
-  
+    background: var(--my-gradient-display);
+    padding: .4rem;
+    border-radius: 10px;
+    transition: all .3s;
+    border:2px solid#b8b8b8;
 }
+.instruments-dispaly:hover {
+    transform: scale(1.1, 1.1);
+}
+
+
 .piano-display {
     width: 50%;
     height: 100%;
@@ -229,32 +284,139 @@ body{
     align-items: center;
     text-decoration: none;
     outline: none;
-    background: rgb(104, 104, 104);
-    border: 2px solid rgb(0, 174, 255);
+    background: var(--my-gradient);
+    border-top: 2px solid rgb(153, 153, 153);
+    border-left: 4px solid rgb(70, 70, 70);
+    border-right: 4px solid rgb(68, 68, 68);
+    border-bottom: 6px solid rgb(48, 48, 48);
     border-radius: 4px;
     margin: 0 .5rem;
     
 }
+.piano-display-center {
+  background: #96e0e2;
+  height: 4rem;
+  display: flex;
+  position: relative;
+  top: 0;
+ 
+  
+}
+#piano-display-chords {
+    background: transparent;
+    
+}
+#piano-display-chords span {
+  margin-top: 2.5rem;
+}
 .piano-display-container-lft {
     width:8rem;
     height: 100%;
-    background: #6b6b6b;
+    background: var(--my-gradient-body-display);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: 1px solid rgb(39, 39, 39);
+   
     
 }
 .top-span {
-    color: #00eef7;
+    color: #ffffff;
     position: absolute;
     font-size: .8rem;
-    top: .4rem;
+    top: .2rem;
+    font-weight: 400;
     
 }
-#span-dispaly {
+.center-span {
+    color: #ffffff;
+    position: relative;
+    font-size: .8rem;
     font-weight: 500;
+}
+
+#top-span-center-bottom span {
+   position: relative;
+   padding: 2rem;
+ 
+}
+
+#note {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #00f7ff;
+    width: 4rem;
+    height: 2.6rem;
+    margin-top: -2.7rem;
+    background: var(--my-gradient-display);
+    border-radius: 10px;
+    transition: .3s;
+    border:2px solid#b8b8b8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+#note:hover {
+    transition: .3s;
+    transform: scale(1.1, 1.1);
+    cursor: default;
+}
+#octave {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #00f7ff;
+    width: 4rem;
+    height: 2.6rem;
+    margin-top: -2.7rem;
+    background: var(--my-gradient-display);
+    border-radius: 10px;
+    transition: .3s;
+    border:2px solid#b8b8b8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#octave:hover {
+    transition: .3s;
+    transform: scale(1.1, 1.1);
+    cursor: default;
+}
+#chords {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #00f7ff;
+    width: 4rem;
+    height: 2.5rem;
+    margin-top: -2.7rem;
+    background: var(--my-gradient-display);
+    border-radius: 10px;
+    transition: .3s;
+    border:2px solid#b8b8b8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#chords:hover {
+    transition: .3s;
+    transform: scale(1.1, 1.1);
+    cursor: default;
+}
+#piano-display-chords {
+    position: absolute;
+    top: 4.6rem;
+    width: 8rem;
+    height: 2.8rem;
+    padding-top: 2.8rem ;
+    
+   
+}
+#span-dispaly {
+    font-weight: 800;
     font-size: .7rem;
     padding: .2rem 0;
     display: flex;
@@ -275,7 +437,7 @@ body{
     align-items: center;
     text-decoration: none;
     outline: none;
-    background: rgb(231, 231, 231);
+    background: var(--my-gradient-display);
     border: 2px solid rgb(0, 225, 255);
     border-radius: 4px;
     
@@ -306,8 +468,14 @@ body{
     cursor: pointer;
     color: #00f7ff;
     transition: .3s;
-}
+    transform: scale(0.98, 0.98);
 
+}
+.controls-octave #up:active {
+    background-color: #ffffff;
+    color: #00f7ff;
+    transition: .1s;
+}
 .controls-octave #down {
     width: 4rem;
     height: 2rem;
@@ -326,6 +494,12 @@ body{
     cursor: pointer;
     color: #00f7ff;
     transition: .3s;
+    transform: scale(0.98, 0.98);
+}
+.controls-octave #down:active {
+    background-color: #ffffff;
+    color: #00f7ff;
+    transition: .1s;
 }
 .piano-controls span {
     font: .6em sans-serif;
@@ -382,7 +556,7 @@ body{
 .controls-mode {
     width: 3rem;
     height: 3rem;
-    background: #c7c7c7;
+    background: #ffffff;
     padding: .3rem;
     border-radius: 5px;
     transition: .3s;
@@ -392,6 +566,12 @@ body{
     background: rgb(0, 255, 242);
     transition: .3s;
     cursor: pointer;
-}
+    transform: scale(1.1, 1.1);
 
+}
+.controls-mode:active {
+    background: rgb(253, 253, 253);
+    transition: .1s;
+    cursor: pointer;
+}
 /*# sourceMappingURL=main.css.map */

@@ -15,27 +15,54 @@ class Instrumento {
     return this._octaveInstrument;
   }
 }
+class Chords {
+  set firstNote(value) {
+    this._firstNote = value;
+  }
+  get firstNote() {
+    return this._firstNote;
+  }
+  set secondNode(value) {
+    this._secondNode = value;
+  }
+  get secondNote() {
+    return this._secondNode;
+  }
+  set thirdNote(value) {
+    this._thirdNote = value;
+  }
+  get thirdNote() {
+    return this._thirdNote;
+  }
+}
 
 let newInstr = new Instrumento ()
+let newChords = new Chords ()
 
 function playNote(event) {
   
   let audioKeyCode = getKeyCode(event);
- 
+  
   const key = document.querySelector(`.key[data-key="${audioKeyCode}"]`)
- 
+  console.log(audioKeyCode)
   const cantFoundAnyKey = !key
  
   if(cantFoundAnyKey) {
     return;
     
   }
-
+  
   addPlayingClass(key)
-
   playAudio(audioKeyCode)
+  alterTextDisplayKeys(audioKeyCode)
 
 }
+
+
+
+
+
+
 
 function addPlayingClass(key) {
   key.classList.add('playing')
@@ -45,7 +72,7 @@ function addPlayingClass(key) {
 function getKeyCode(event) {
   let keyCode;
 
-  const isKeyboard = event.type === "keydown"
+  const isKeyboard = event.type === "keypress"
   if(isKeyboard) {
     keyCode = event.keyCode
   } else {
@@ -58,7 +85,7 @@ function getKeyCode(event) {
   function playAudio(audioKeyCode) {
 
     let instrumentPlay = (newInstr._nameInstrument)
-    if (instrumentPlay === 'guitar') {
+    if (instrumentPlay === 'piano') {
       let instrumentPlayOctave = (newInstr._octaveInstrument)
       if (instrumentPlayOctave === 'octoUp'){
         const audio = document.querySelector(`.piano-octave-up audio[data-key="${audioKeyCode}"]`)
@@ -136,8 +163,11 @@ function getKeyCode(event) {
       }
     }
   }
-   
-    
+ 
+
+
+  
+
   
 
 function removePlayingClass(event) {
@@ -149,18 +179,24 @@ function registerEvents() {
   keys.forEach( function(key) {
     key.addEventListener("click", playNote)
     key.addEventListener("transitionend", removePlayingClass)
+    
   })
 
-  window.addEventListener("keydown", playNote)
+  window.addEventListener("keypress", playNote)
 
 }
-const displayL = document.querySelector('#piano-display-lft')
-const displayR = document.querySelector('#piano-display-right')
+const displayInstrunents = document.querySelector('#piano-display-instruments')
+const displayNotes = document.querySelector('#piano-display-notes')
+
+
+const displayMode = document.querySelector('#piano-display-mode')
+
+
 const spanInstruments = document.querySelector('#span');
 const spanOctave = document.querySelector('#span-octave');
 const spanMode = document.querySelector('#span-mode');
 const btnPiano = document.querySelector('#imgPiano')
-const btnGuitar = document.querySelector('#imgGuitar')
+const btnCello = document.querySelector('#imgCello')
 const btnSynth = document.querySelector('#imgSynth')
 const btnViolin = document.querySelector('#imgViolin')
 const btnFlute = document.querySelector('#imgFlute')
@@ -168,39 +204,45 @@ const btnBass = document.querySelector('#imgBass')
 const btnOctaveUp = document.querySelector('#up')
 const btnOctaveDown = document.querySelector('#down')
 const btnModeNote = document.querySelector('#mode-note')
-const btnModeCords = document.querySelector('#mode-cords')
+const btnModeChords = document.querySelector('#mode-chords')
+
+
+const displayNote = document.querySelector('#note')
+const displayOctave = document.querySelector('#octave')
+const displayChords = document.querySelector('#chords')
+
 
 function insertIconPianoDisplay() {
-  displayL.innerHTML = '<span class="top-span">INSTRUMENTS</span> <img src="./img/Instruments/piano.png" alt="piano" id="imgPiano"class="instruments-dispaly"><span id="span-dispaly">PIANO</span>'
+  displayInstrunents.innerHTML = '<span class="top-span">INSTRUMENTS</span> <img src="./img/Instruments/piano-default.png" alt="piano" id="imgPiano"class="instruments-dispaly"><span id="span-dispaly">PIANO</span>'
 }
-function insertIconGuitarDisplay() {
-  displayL.innerHTML = '<span class="top-span">INSTRUMENTS</span> <img src="./img/Instruments/violao-classico.png" alt="violao-classico" id="imgGuitar" class="instruments-dispaly"><span id="span-dispaly">GUITAR</span>'
+function insertIconCelloDisplay() {
+  displayInstrunents.innerHTML = '<span class="top-span">INSTRUMENTS</span> <img src="./img/Instruments/cello-default.png" alt="cello" id="imgCello" class="instruments-dispaly"><span id="span-dispaly">CELLO</span>'
 }
 function insertIconSynthDisplay() {
-  displayL.innerHTML = '<span class="top-span">INSTRUMENTS</span> <img src="./img/Instruments/sintetizador.png" alt="sintetizador" id="imgSynth" class="instruments-dispaly"><span id="span-dispaly">SYNTHESIZER</span>'
+  displayInstrunents.innerHTML = '<span class="top-span">INSTRUMENTS</span> <img src="./img/Instruments/sintetizador-default.png" alt="sintetizador" id="imgSynth" class="instruments-dispaly"><span id="span-dispaly">SYNTHESIZER</span>'
 }
 function insertIconViolinDisplay() {
-  displayL.innerHTML = '<span class="top-span">INSTRUMENTS</span> <img src="./img/Instruments/violino.png" alt="violino" id="imgViolin" class="instruments-dispaly"><span id="span-dispaly">VIOLIN</span>'
+  displayInstrunents.innerHTML = '<span class="top-span">INSTRUMENTS</span> <img src="./img/Instruments/violino-default.png" alt="violino" id="imgViolin" class="instruments-dispaly"><span id="span-dispaly">VIOLIN</span>'
 }
 function insertIconFluteDisplay() {
-  displayL.innerHTML = '<span class="top-span">INSTRUMENTS</span> <img src="./img/Instruments/flauta-transversal.png" alt="flauta-transversal" id="imgFlute" class="instruments-dispaly"><span id="span-dispaly">FLUTE</span>'
+  displayInstrunents.innerHTML = '<span class="top-span">INSTRUMENTS</span> <img src="./img/Instruments/flauta-transversal-default.png" alt="flauta-transversal" id="imgFlute" class="instruments-dispaly"><span id="span-dispaly">FLUTE</span>'
 }
 function insertIconBassDisplay() {
-  displayL.innerHTML = '<span class="top-span">INSTRUMENTS</span> <img src="./img/Instruments/bass-guitar.png" alt="bass-guitar" id="imgBass" class="instruments-dispaly"><span id="span-dispaly">BASS</span>'
+  displayInstrunents.innerHTML = '<span class="top-span">INSTRUMENTS</span> <img src="./img/Instruments/bass-guitar-default.png" alt="bass-guitar" id="imgBass" class="instruments-dispaly"><span id="span-dispaly">BASS</span>'
 }
 function alterIconModeNote() {
-  displayR.innerHTML = '<span class="top-span">MODE</span> <img src="./img/Instruments/musica.png" alt="sintetizador" class="instruments-dispaly"><span id="span-dispaly">NOTE</span>'
+  displayMode.innerHTML = '<span class="top-span">MODE</span> <img src="./img/Instruments/musica-default.png" alt="sintetizador" class="instruments-dispaly"><span id="span-dispaly">NOTE</span>'
 }
 function alterIconModeCord() {
-  displayR.innerHTML = '<span class="top-span">MODE</span> <img src="./img/Instruments/notas-musicais.png" alt="sintetizador" class="instruments-dispaly"><span id="span-dispaly">CORDS</span>'
+  displayMode.innerHTML = '<span class="top-span">MODE</span> <img src="./img/Instruments/notas-musicais-default.png" alt="sintetizador" class="instruments-dispaly"><span id="span-dispaly">CHORDS</span>'
 }
 
 
 function alterTextOnPiano() {
   spanInstruments.textContent = "PIANO";
 }
-function alterTextOnGuitar() {
-  spanInstruments.textContent = "GUITAR";
+function alterTextOnCello() {
+  spanInstruments.textContent = "CELLO";
 }
 function alterTextOnSynth() {
   spanInstruments.textContent = "SYNTHESIZER";
@@ -230,20 +272,106 @@ function alterTextOnNote() {
   spanMode.textContent = "NOTE";
 }
 function alterTextOnCord() {
-  spanMode.textContent = "CORDS";
+  spanMode.textContent = "CHORDS";
 }
 function alterTextOutMode() {
   spanMode.textContent = "MODE";
+}
+
+function alterTextDisplayKeys(audioKeyCode) {
+  let keys = audioKeyCode
+  
+  if(keys == 92 || keys == 74) {
+    displayNote.textContent = 'C'
+    newChords._firstNote = 'C'
+  }
+  if(keys == 81 || keys == 73) {
+    displayNote.textContent = 'C#/Db'
+  }
+  if(keys == 65 || keys == 75) {
+    displayNote.textContent = 'D'
+  }
+  if(keys == 87 || keys == 79) {
+    displayNote.textContent = 'D#/Eb'
+  }
+  if(keys == 83 || keys == 76) {
+    displayNote.textContent = 'E'
+    newChords._secondNode = 'E'
+  }
+  if(keys == 68 || keys == 186) {
+    displayNote.textContent = 'F'
+  }
+  if(keys == 82 || keys == 80) {
+    displayNote.textContent = 'F#/Gb'
+  }
+  if(keys == 70 || keys == 222) {
+    displayNote.textContent = 'G'
+    newChords.thirdNote = 'G'
+  }
+  if(keys == 84 || keys == 219) {
+    displayNote.textContent = 'G#/Ab'
+  }
+  if(keys == 71 || keys == 220) {
+    displayNote.textContent = 'A'
+  }
+  if(keys == 89 || keys == 221) {
+    displayNote.textContent = 'A#/Bb'
+  }
+  if(keys == 72 || keys == 193) {
+    displayNote.textContent = 'B'
+  }
+
+ if((newChords._firstNote === 'C') && (newChords._secondNode === 'E') && (newChords._thirdNote === 'G')) {
+   displayChords.textContent = "C"
+ }
+ 
+
+  
+  
+ 
+ 
+  
+
+
+
+}
+function alterTextDisplayOctvUp (){
+  if(newInstr._octaveInstrument === 'octoUp') {
+    displayOctave.textContent = "+1" 
+  }
+  if(newInstr._octaveInstrument === 'octoDef') {
+    displayOctave.textContent = "0" 
+  }
+  
+}
+function alterTextDisplayOctvDown (){
+  if(newInstr._octaveInstrument === 'octoDown') {
+    displayOctave.textContent = "-1" 
+  }
+  if(newInstr._octaveInstrument === 'octoDef') {
+    displayOctave.textContent = "0" 
+  }
+  
 }
 
 
 
 function insertPianoPlay() {
   newInstr._octaveInstrument = 'octoDef'
-  newInstr._nameInstrument = 'guitar'
+  newInstr._nameInstrument = 'piano'
   
   insertIconPianoDisplay()
 }
+
+
+function insertCelloPlay() {
+  newInstr._octaveInstrument = 'octoDef'
+  newInstr._nameInstrument = 'cello'
+  
+  insertIconCelloDisplay
+}
+
+
 
 function insertSynthPlay() {
   newInstr._octaveInstrument = 'octoDef'
@@ -273,10 +401,12 @@ function insertBassPlay() {
 function insertOctaveUp() {
   if(newInstr._octaveInstrument === 'octoDef') {
     newInstr._octaveInstrument = 'octoUp'
+    
   }
   if(newInstr._octaveInstrument === 'octoDown') {
     newInstr._octaveInstrument = 'octoDef'
   }
+  alterTextDisplayOctvUp()
 }
 
 function insertOctaveDown() {
@@ -286,10 +416,11 @@ function insertOctaveDown() {
   if(newInstr._octaveInstrument === 'octoUp') {
     newInstr._octaveInstrument = 'octoDef'
   }
+  alterTextDisplayOctvDown()
 }
 
 btnPiano.addEventListener('click',insertPianoPlay )
-btnGuitar.addEventListener('click', insertIconGuitarDisplay)
+btnCello.addEventListener('click', insertIconCelloDisplay)
 btnSynth.addEventListener('click', insertSynthPlay)
 btnViolin.addEventListener('click', insertIconViolinDisplay)
 btnFlute.addEventListener('click', insertFlutePlay)
@@ -301,7 +432,11 @@ btnOctaveDown.addEventListener('click', insertOctaveDown)
 
 
 btnModeNote.addEventListener('click', alterIconModeNote)
-btnModeCords.addEventListener('click', alterIconModeCord)
+btnModeChords.addEventListener('click', alterIconModeCord)
+
+
+
+
 
 
 btnOctaveUp.addEventListener('mouseover', alterTextOnUpOctave)
@@ -310,12 +445,12 @@ btnOctaveUp.addEventListener('mouseout', alterTextOctaveOut)
 btnOctaveDown.addEventListener('mouseout', alterTextOctaveOut)
 btnModeNote.addEventListener('mouseover', alterTextOnNote)
 btnModeNote.addEventListener('mouseout', alterTextOutMode)
-btnModeCords.addEventListener('mouseover', alterTextOnCord)
-btnModeCords.addEventListener('mouseout', alterTextOutMode)
+btnModeChords.addEventListener('mouseover', alterTextOnCord)
+btnModeChords.addEventListener('mouseout', alterTextOutMode)
 btnPiano.addEventListener('mouseover', alterTextOnPiano)
 btnPiano.addEventListener('mouseout', alterTextOut)
-btnGuitar.addEventListener('mouseover', alterTextOnGuitar)
-btnGuitar.addEventListener('mouseout', alterTextOut)
+btnCello.addEventListener('mouseover', alterTextOnCello)
+btnCello.addEventListener('mouseout', alterTextOut)
 btnSynth.addEventListener('mouseover', alterTextOnSynth)
 btnSynth.addEventListener('mouseout', alterTextOut)
 btnViolin.addEventListener('mouseover', alterTextOnViolin)
